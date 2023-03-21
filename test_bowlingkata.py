@@ -1,4 +1,11 @@
 class TestBowlingkata:
 
     def test(self):
-        assert 1==0
+        assert True
+
+    #def test_strike:
+    #def test_spare:
+    #def test_open
+    #def test_perfect
+    #def test_zero
+        

@@ -1,9 +1,13 @@
-class BonusRoll:
-    def __init__(self, throws, firstThrow):
-        throws.add(firstThrow)
+from Frame import Frame
 
-    def Score():
+class BonusRoll(Frame):
+    def __init__(self, throws, firstThrow):
+        self.throws = throws
+        self.startingThrow = len(throws)
+        throws.append(firstThrow)
+
+    def Score(self):
         return 0
     
-    def FrameSize():
+    def FrameSize(self):
         return 0

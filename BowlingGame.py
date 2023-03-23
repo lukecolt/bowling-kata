@@ -1,14 +1,28 @@
+from Frame import Frame
+from OpenFrame import OpenFrame
+from SpareFrame import SpareFrame
+from StrikeFrame import StrikeFrame
+from BonusRoll import BonusRoll
+
 class BowlingGame:
     def __init__(self):
-        throws = []
+        self.throws = []
+        self.frames = []
     
-    #def strike(self):
+    def strike(self):
+        self.frames.append(StrikeFrame(self.throws))
 
-    #def spare(self, firstThrow, secondThrow):
+    def spare(self, firstThrow, secondThrow):
+        self.frames.append(SpareFrame(self.throws,  firstThrow, secondThrow))
 
-    #def open(self, firstThrow, secondThrow):
+    def open(self, firstThrow, secondThrow):
+        self.frames.append(OpenFrame(self.throws, firstThrow, secondThrow))
 
-    #def roll(self, roll):
+    def roll(self, roll):
+        self.frames.append(BonusRoll(self.throws, roll))
 
     def score(self):
-        return 0
+        number = 0
+        for frame in self.frames :
+            number += frame.Score()
+        return number 
